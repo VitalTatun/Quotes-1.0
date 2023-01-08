@@ -33,21 +33,23 @@ class QuoteCollectionViewCell: UICollectionViewCell {
         quoteText.numberOfLines = 0
         addSubview(quoteText)
         quoteText.translatesAutoresizingMaskIntoConstraints = false
-        quoteText.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        quoteText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        quoteText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-
+        NSLayoutConstraint.activate([
+            quoteText.centerYAnchor.constraint(equalTo: centerYAnchor),
+            quoteText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            quoteText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
     }
-    
     private func configureAuthor() {
         quoteAuthor.textColor = .darkGray
         quoteAuthor.font = UIFont.preferredFont(forTextStyle: .title2)
         quoteAuthor.textColor = .black
         addSubview(quoteAuthor)
         quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
-        quoteAuthor.topAnchor.constraint(equalTo: quoteText.bottomAnchor, constant: 50).isActive = true
-        quoteAuthor.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        quoteAuthor.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-        quoteAuthor.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            quoteAuthor.topAnchor.constraint(equalTo: quoteText.bottomAnchor, constant: 50),
+            quoteAuthor.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            quoteAuthor.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            quoteAuthor.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }

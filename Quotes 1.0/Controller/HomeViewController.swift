@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var contentView = QuoteMainView()
+    private let colors = UIColor.palette()
     
     var quote = Quote.sampleQuote
 
@@ -17,9 +18,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         title = "Quotes"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        var image = UIImage(named: "quoteLogo")
-        image = image?.withRenderingMode(.alwaysOriginal)
         
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil),
@@ -42,7 +40,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: QuoteCollectionViewCell.self), for: indexPath) as! QuoteCollectionViewCell
         let quotes = quote[indexPath.item]
+        let colorIndex = indexPath.item%3
         cell.setUpCollectionCell(with: quotes)
+        cell.backgroundColor = colors[colorIndex]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

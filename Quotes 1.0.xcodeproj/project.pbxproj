@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674779B2969B79200FD55DA /* UIColor+Palette.swift */; };
 		969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B42966D5B100E908F1 /* QuoteModel.swift */; };
 		969403B72966E03100E908F1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B62966E03100E908F1 /* HomeViewController.swift */; };
 		969403B92966E13500E908F1 /* QuoteMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B82966E13500E908F1 /* QuoteMainView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9674779B2969B79200FD55DA /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		969403B42966D5B100E908F1 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		969403B62966E03100E908F1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		969403B82966E13500E908F1 /* QuoteMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteMainView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9674779A2969B74300FD55DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9674779B2969B79200FD55DA /* UIColor+Palette.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		969403B12966D57C00E908F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 			children = (
 				96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */,
 				96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */,
+				9674779A2969B74300FD55DA /* Extensions */,
 				969403B12966D57C00E908F1 /* Model */,
 				969403B22966D58100E908F1 /* View */,
 				969403B32966D58800E908F1 /* Controller */,
@@ -174,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FF2A0B2966D19E00B21E29 /* AppDelegate.swift in Sources */,
+				9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */,
 				969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */,
 				969403C1296718FD00E908F1 /* FavoritesViewController.swift in Sources */,
 				969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */,

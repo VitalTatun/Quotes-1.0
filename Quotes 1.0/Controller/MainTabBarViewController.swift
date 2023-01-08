@@ -19,8 +19,6 @@ class MainTabBarViewController: UITabBarController {
         homeViewController.title = "Quotes"
         favoriteViewController.tabBarItem.image = UIImage(systemName: "text.badge.star")
         favoriteViewController.title = "Favorites"
-        
-        
         tabBar.tintColor = .label
         setViewControllers([homeViewController, favoriteViewController], animated: true)
 
