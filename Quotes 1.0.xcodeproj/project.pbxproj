@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674779B2969B79200FD55DA /* UIColor+Palette.swift */; };
 		969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B42966D5B100E908F1 /* QuoteModel.swift */; };
-		969403B72966E03100E908F1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B62966E03100E908F1 /* HomeViewController.swift */; };
-		969403B92966E13500E908F1 /* QuoteMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B82966E13500E908F1 /* QuoteMainView.swift */; };
+		969403B72966E03100E908F1 /* QuoteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */; };
 		969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */; };
-		969403BF296718DF00E908F1 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403BE296718DF00E908F1 /* MainTabBarViewController.swift */; };
-		969403C1296718FD00E908F1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403C0296718FD00E908F1 /* FavoritesViewController.swift */; };
+		969403BF296718DF00E908F1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403BE296718DF00E908F1 /* TabBarViewController.swift */; };
+		96CB03852975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB03842975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift */; };
+		96CB038A29754B78006A00F0 /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038929754B78006A00F0 /* AddQuoteViewController.swift */; };
+		96CB038D297560D9006A00F0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038C297560D9006A00F0 /* FileManager.swift */; };
+		96DD372B29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD372A29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift */; };
+		96DD372D29742089001D4B13 /* FavoritesQuotesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD372C29742089001D4B13 /* FavoritesQuotesCollectionViewController.swift */; };
 		96FF2A0B2966D19E00B21E29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */; };
 		96FF2A0D2966D19E00B21E29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */; };
 		96FF2A142966D19F00B21E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FF2A132966D19F00B21E29 /* Assets.xcassets */; };
@@ -23,11 +26,14 @@
 /* Begin PBXFileReference section */
 		9674779B2969B79200FD55DA /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		969403B42966D5B100E908F1 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
-		969403B62966E03100E908F1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		969403B82966E13500E908F1 /* QuoteMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteMainView.swift; sourceTree = "<group>"; };
+		969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewController.swift; sourceTree = "<group>"; };
 		969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
-		969403BE296718DF00E908F1 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		969403C0296718FD00E908F1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		969403BE296718DF00E908F1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		96CB03842975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteCollectionViewController+ContextMenu.swift"; sourceTree = "<group>"; };
+		96CB038929754B78006A00F0 /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
+		96CB038C297560D9006A00F0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		96DD372A29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteCollectionViewController+Actions.swift"; sourceTree = "<group>"; };
+		96DD372C29742089001D4B13 /* FavoritesQuotesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesQuotesCollectionViewController.swift; sourceTree = "<group>"; };
 		96FF2A072966D19E00B21E29 /* Quotes 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quotes 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				969403B42966D5B100E908F1 /* QuoteModel.swift */,
+				96CB038C297560D9006A00F0 /* FileManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -67,19 +74,72 @@
 			isa = PBXGroup;
 			children = (
 				969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */,
-				969403B82966E13500E908F1 /* QuoteMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		969403B32966D58800E908F1 /* Controller */ = {
+		969403B32966D58800E908F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				969403BE296718DF00E908F1 /* MainTabBarViewController.swift */,
-				969403B62966E03100E908F1 /* HomeViewController.swift */,
-				969403C0296718FD00E908F1 /* FavoritesViewController.swift */,
+				96CB038E297578C5006A00F0 /* TabBarViewController */,
+				96F62A1229741EE900C20E9B /* FavoriteCollectionViewController */,
+				96F62A1129741E6E00C20E9B /* CollectionViewController */,
+				96CB038B29754B82006A00F0 /* DetailViewController */,
 			);
-			path = Controller;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		96CB038B29754B82006A00F0 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96CB038929754B78006A00F0 /* AddQuoteViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		96CB038E297578C5006A00F0 /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				969403BE296718DF00E908F1 /* TabBarViewController.swift */,
+			);
+			path = TabBarViewController;
+			sourceTree = "<group>";
+		};
+		96F62A1129741E6E00C20E9B /* CollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */,
+				96DD372A29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift */,
+				96CB03842975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift */,
+			);
+			path = CollectionViewController;
+			sourceTree = "<group>";
+		};
+		96F62A1229741EE900C20E9B /* FavoriteCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96DD372C29742089001D4B13 /* FavoritesQuotesCollectionViewController.swift */,
+			);
+			path = FavoriteCollectionViewController;
+			sourceTree = "<group>";
+		};
+		96FC5DC829788BDA0079BBEA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */,
+				96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		96FC5DC929788C060079BBEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96FF2A132966D19F00B21E29 /* Assets.xcassets */,
+				96FF2A152966D19F00B21E29 /* LaunchScreen.storyboard */,
+				96FF2A182966D19F00B21E29 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		96FF29FE2966D19E00B21E29 = {
@@ -101,15 +161,12 @@
 		96FF2A092966D19E00B21E29 /* Quotes 1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */,
-				96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */,
+				96FC5DC829788BDA0079BBEA /* Application */,
+				96FC5DC929788C060079BBEA /* Resources */,
 				9674779A2969B74300FD55DA /* Extensions */,
 				969403B12966D57C00E908F1 /* Model */,
 				969403B22966D58100E908F1 /* View */,
-				969403B32966D58800E908F1 /* Controller */,
-				96FF2A132966D19F00B21E29 /* Assets.xcassets */,
-				96FF2A152966D19F00B21E29 /* LaunchScreen.storyboard */,
-				96FF2A182966D19F00B21E29 /* Info.plist */,
+				969403B32966D58800E908F1 /* Controllers */,
 			);
 			path = "Quotes 1.0";
 			sourceTree = "<group>";
@@ -184,15 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CB038A29754B78006A00F0 /* AddQuoteViewController.swift in Sources */,
+				96DD372B29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift in Sources */,
 				96FF2A0B2966D19E00B21E29 /* AppDelegate.swift in Sources */,
+				96CB038D297560D9006A00F0 /* FileManager.swift in Sources */,
+				96CB03852975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift in Sources */,
 				9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */,
 				969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */,
-				969403C1296718FD00E908F1 /* FavoritesViewController.swift in Sources */,
 				969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */,
-				969403BF296718DF00E908F1 /* MainTabBarViewController.swift in Sources */,
+				969403BF296718DF00E908F1 /* TabBarViewController.swift in Sources */,
 				96FF2A0D2966D19E00B21E29 /* SceneDelegate.swift in Sources */,
-				969403B72966E03100E908F1 /* HomeViewController.swift in Sources */,
-				969403B92966E13500E908F1 /* QuoteMainView.swift in Sources */,
+				969403B72966E03100E908F1 /* QuoteCollectionViewController.swift in Sources */,
+				96DD372D29742089001D4B13 /* FavoritesQuotesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6XAPXV5GM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Quotes 1.0/Info.plist";
+				INFOPLIST_FILE = "Quotes 1.0/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -361,7 +421,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6XAPXV5GM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Quotes 1.0/Info.plist";
+				INFOPLIST_FILE = "Quotes 1.0/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

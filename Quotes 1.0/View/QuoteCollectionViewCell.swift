@@ -9,8 +9,8 @@ import UIKit
 
 class QuoteCollectionViewCell: UICollectionViewCell {
     
-    private let quoteText = UILabel()
-    private let quoteAuthor = UILabel()
+    private let quoteLabel = UILabel()
+    private let authorLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,33 +23,35 @@ class QuoteCollectionViewCell: UICollectionViewCell {
     }
     
     func setUpCollectionCell(with quotes: Quote) {
-        quoteText.text = quotes.textQuote
-        quoteAuthor.text = quotes.author
+        quoteLabel.text = quotes.text
+        authorLabel.text = quotes.author
     }
     
     private func configureText() {
-        quoteText.textColor = .black
-        quoteText.textAlignment = .left
-        quoteText.numberOfLines = 0
-        addSubview(quoteText)
-        quoteText.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            quoteText.centerYAnchor.constraint(equalTo: centerYAnchor),
-            quoteText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            quoteText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-        ])
+        quoteLabel.font = .preferredFont(forTextStyle: .body)
+        quoteLabel.textAlignment = .left
+        quoteLabel.numberOfLines = 0
+        quoteLabel.lineBreakMode = .byWordWrapping
+        quoteLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        addSubview(quoteLabel)
+        quoteLabel.translatesAutoresizingMaskIntoConstraints = false
+        quoteLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        quoteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        quoteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        
     }
+    
     private func configureAuthor() {
-        quoteAuthor.textColor = .darkGray
-        quoteAuthor.font = UIFont.preferredFont(forTextStyle: .title2)
-        quoteAuthor.textColor = .black
-        addSubview(quoteAuthor)
-        quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            quoteAuthor.topAnchor.constraint(equalTo: quoteText.bottomAnchor, constant: 50),
-            quoteAuthor.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            quoteAuthor.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            quoteAuthor.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        authorLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        authorLabel.textAlignment = .left
+        authorLabel.numberOfLines = 5
+        authorLabel.lineBreakMode = .byWordWrapping
+        authorLabel.setContentHuggingPriority(.defaultHigh + 1, for: .vertical)
+        addSubview(authorLabel)
+        authorLabel.translatesAutoresizingMaskIntoConstraints = false
+        authorLabel.topAnchor.constraint(equalTo: quoteLabel.bottomAnchor, constant: 10).isActive = true
+        authorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        authorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        authorLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
     }
 }
