@@ -9,13 +9,13 @@ import UIKit
 
 extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
     
+    // MARK: - Delegate actions
     func didSaveButtonTapped(quote: Quote) {
         quotes.insert(quote, at: 0)
         collectionView.reloadData()
     }
     
     // MARK: - VC Actions
-    
     @objc func addEditQuote(_ sender: UIBarButtonItem) {
         let viewController = AddQuoteViewController()
         viewController.quoteViewControllerDelegate = self

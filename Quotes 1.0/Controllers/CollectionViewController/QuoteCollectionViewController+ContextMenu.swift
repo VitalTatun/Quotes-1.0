@@ -16,13 +16,20 @@ extension QuoteCollectionViewController {
                 self.deleteQuote(at: indexPath)
             }
             
-            let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { (action) in
-                // TODO: Share option as Text (or Image?)
-                
+            let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) {(action) in
+                // TODO: Share option as Text
+                let activityController: UIActivityViewController
+                guard let text = self.quotes[indexPath.item].text,
+                      let quote = self.quotes[indexPath.item].author else {return}
+                let defautQuote = text + quote
+                    activityController = UIActivityViewController(activityItems: [defautQuote], applicationActivities: nil)
+                print(defautQuote)
+                    self.present(activityController, animated: true, completion: nil)
+
             }
             
             let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { (action) in
-                //  : Copy quote as text option
+                // TODO: Copy quote as text option
                 
             }
             let addToFavorites = UIAction(title: "Add to favorites", image: UIImage(systemName: "suit.heart")) { (action) in

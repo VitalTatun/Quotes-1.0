@@ -15,11 +15,12 @@ class AddQuoteViewController: UIViewController {
     
     var quotes: Quote?
     
+    weak var quoteViewControllerDelegate: AddQuoteViewControllerDelegate?
+    
     let quoteText = UITextView()
     let quoteAuthor = UITextView()
     var saveButton = UIBarButtonItem()
     
-    weak var quoteViewControllerDelegate: AddQuoteViewControllerDelegate?
     
     
     
@@ -41,27 +42,19 @@ class AddQuoteViewController: UIViewController {
     }
     
     fileprivate func configureNavigationTitle() {
-        if let quote = quotes {
+        guard let quote = quotes else {
+            return title = "Add emoji"
+        }
             quoteText.text = quote.text
             quoteAuthor.text = quote.author
             title = "Edit Emoji"
-        } else {
-            title = "Add Emoji"
-        }
     }
     
     private func configureTextView() {
         quoteText.textAlignment = .left
         quoteText.font = .preferredFont(forTextStyle: .body)
-//        quoteText.layer.borderWidth = 1
-//        quoteText.layer.borderColor = UIColor.gray.cgColor
         quoteText.layer.cornerRadius = 10
         quoteText.backgroundColor = .white
-        quoteText.layer.shadowColor = UIColor.black.cgColor
-        quoteText.layer.shadowOpacity = 0.1
-        quoteText.layer.shadowRadius = 10
-        quoteText.layer.shadowOffset = CGSize(width: 0, height: 10)
-        quoteText.clipsToBounds = false
         
         view.addSubview(quoteText)
         
@@ -74,11 +67,6 @@ class AddQuoteViewController: UIViewController {
     private func configureAuthorTextView() {
         quoteAuthor.textAlignment = .left
         quoteAuthor.font = .preferredFont(forTextStyle: .body)
-        quoteAuthor.layer.borderWidth = 1
-        quoteAuthor.layer.shadowRadius = 5
-
-        quoteAuthor.layer.cornerRadius = 10
-        
         quoteAuthor.backgroundColor = .clear
         view.addSubview(quoteAuthor)
         
@@ -100,7 +88,6 @@ class AddQuoteViewController: UIViewController {
             quotes = Quote(text: text!, author: author, isFavorite: false)
             quoteViewControllerDelegate?.didSaveButtonTapped(quote: quotes!)
             navigationController?.popViewController(animated: true)
-            print(quotes!)
         } else {
             // in case textView is empty
             print("No data")

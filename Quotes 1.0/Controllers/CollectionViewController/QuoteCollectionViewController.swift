@@ -58,12 +58,13 @@ class QuoteCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                let colors = UIColor.palette()
+//        let colors = UIColor.palette()
+//        let colorIndex = indexPath.item % colors.count
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: QuoteCollectionViewCell.self), for: indexPath) as! QuoteCollectionViewCell
         let quotes = quotes[indexPath.item]
-                let colorIndex = indexPath.item % colors.count
         cell.setUpCollectionCell(with: quotes)
-        cell.backgroundColor = colors[colorIndex]
+        cell.backgroundColor = .white
         return cell
     }
     
