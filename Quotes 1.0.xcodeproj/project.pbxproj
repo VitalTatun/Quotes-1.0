@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674779B2969B79200FD55DA /* UIColor+Palette.swift */; };
+		9682A63C298436CB003FA31D /* CormorantGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */; };
+		9682A63D298436CD003FA31D /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */; };
 		969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B42966D5B100E908F1 /* QuoteModel.swift */; };
 		969403B72966E03100E908F1 /* QuoteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */; };
 		969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		9674779B2969B79200FD55DA /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Regular.ttf"; sourceTree = "<group>"; };
+		9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Bold.ttf"; sourceTree = "<group>"; };
 		969403B42966D5B100E908F1 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewController.swift; sourceTree = "<group>"; };
 		969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 				9674779B2969B79200FD55DA /* UIColor+Palette.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9682A63929843686003FA31D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */,
+				9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		969403B12966D57C00E908F1 /* Model */ = {
@@ -135,6 +148,7 @@
 		96FC5DC929788C060079BBEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9682A63929843686003FA31D /* Fonts */,
 				96FF2A132966D19F00B21E29 /* Assets.xcassets */,
 				96FF2A152966D19F00B21E29 /* LaunchScreen.storyboard */,
 				96FF2A182966D19F00B21E29 /* Info.plist */,
@@ -230,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FF2A172966D19F00B21E29 /* LaunchScreen.storyboard in Resources */,
+				9682A63C298436CB003FA31D /* CormorantGaramond-Bold.ttf in Resources */,
+				9682A63D298436CD003FA31D /* CormorantGaramond-Regular.ttf in Resources */,
 				96FF2A142966D19F00B21E29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

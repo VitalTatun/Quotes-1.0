@@ -42,10 +42,9 @@ extension QuoteCollectionViewController {
             }
             
             let addToFavorites = UIAction(title: "Add to favorites", image: UIImage(systemName: "suit.heart")) { (action) in
-                // TODO: Add to favorites option
+                // TODO: Add to favorites option ?
                 
             }
-            
             return UIMenu(title: "", image: nil, identifier: nil,
                           options: [], children: [delete, share, copy, addToFavorites])
         }

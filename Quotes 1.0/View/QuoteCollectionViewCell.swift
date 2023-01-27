@@ -28,7 +28,9 @@ class QuoteCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureText() {
-        quoteLabel.font = .preferredFont(forTextStyle: .body)
+        if  let customFont = UIFont(name: "CormorantGaramond-Regular", size: 20) {
+            quoteLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
+        }
         quoteLabel.textAlignment = .left
         quoteLabel.numberOfLines = 0
         quoteLabel.lineBreakMode = .byWordWrapping
@@ -38,11 +40,12 @@ class QuoteCollectionViewCell: UICollectionViewCell {
         quoteLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
         quoteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         quoteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-        
     }
     
     private func configureAuthor() {
-        authorLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        if  let customFont = UIFont(name: "CormorantGaramond-Bold", size: 20) {
+            authorLabel.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont)
+        }
         authorLabel.textAlignment = .left
         authorLabel.numberOfLines = 5
         authorLabel.lineBreakMode = .byWordWrapping

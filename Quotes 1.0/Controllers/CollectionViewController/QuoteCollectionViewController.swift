@@ -11,8 +11,6 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     var quotes: [Quote] = []
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +36,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         let quoteNameButton = UIBarButtonItem(title: "QUOTES", style: .plain, target: .none, action: nil)
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.black,
-            .font: UIFont.systemFont(ofSize: 30, weight: .light),
+            .font: UIFont.systemFont(ofSize: 30, weight: .thin),
         ]
         navigationController?.navigationBar.tintColor = .black
         navigationItem.rightBarButtonItems = [addButton, searchButton]
@@ -70,7 +68,6 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     
     // MARK: - CollectionViewDelegate
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let quoteToEdit = quotes[indexPath.item]
         let addEditViewController = AddQuoteViewController()
@@ -81,8 +78,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     
 }
 
-// MARK:  - Flow Layout Delegate
-
+    // MARK:  - Flow Layout Delegate
 extension QuoteCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
