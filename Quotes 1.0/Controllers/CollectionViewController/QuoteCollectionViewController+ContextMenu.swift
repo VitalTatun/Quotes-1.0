@@ -30,8 +30,17 @@ extension QuoteCollectionViewController {
             
             let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { (action) in
                 // TODO: Copy quote as text option
-                
+                let pasteboard = UIPasteboard.general
+                guard let text = self.quotes[indexPath.item].text else { return }
+                guard let author = self.quotes[indexPath.item].author else {
+                    let defaultQuote = text
+                    pasteboard.string = defaultQuote
+                    return
+                }
+                let defaultQuote = text + author
+                pasteboard.string = defaultQuote
             }
+            
             let addToFavorites = UIAction(title: "Add to favorites", image: UIImage(systemName: "suit.heart")) { (action) in
                 // TODO: Add to favorites option
                 
