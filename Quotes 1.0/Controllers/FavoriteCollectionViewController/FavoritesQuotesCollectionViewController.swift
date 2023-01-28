@@ -15,7 +15,7 @@ class FavoritesQuotesCollectionViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Favorites quotes"
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = .magenta
     }
     
 }

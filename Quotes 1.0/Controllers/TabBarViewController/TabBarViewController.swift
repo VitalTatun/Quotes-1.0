@@ -45,6 +45,7 @@ class TabBarViewController: UITabBarController {
             generateTabBarController(rootViewController: mainPageViewController, image: TabBarItem.Home.icon, title: TabBarItem.Home.title),
             generateTabBarController(rootViewController: favoritesViewController, image: TabBarItem.Favorites.icon, title: TabBarItem.Favorites.title)
         ]
+        tabBar.tintColor = UIColor(named: "Navigation Bar Titles")
     }
     
     private func generateTabBarController(rootViewController: UIViewController, image: UIImage?, title: String) -> UIViewController {

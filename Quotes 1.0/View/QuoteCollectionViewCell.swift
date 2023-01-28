@@ -28,7 +28,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureText() {
-        if  let customFont = UIFont(name: "CormorantGaramond-Regular", size: 20) {
+        if  let customFont = UIFont(name: "Georgia", size: 18) {
             quoteLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
         }
         quoteLabel.textAlignment = .left
@@ -43,7 +43,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureAuthor() {
-        if  let customFont = UIFont(name: "CormorantGaramond-Bold", size: 20) {
+        if  let customFont = UIFont(name: "Georgia Bold", size: 22) {
             authorLabel.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: customFont)
         }
         authorLabel.textAlignment = .left

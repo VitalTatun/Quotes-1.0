@@ -24,50 +24,66 @@ class AddQuoteViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         setupNavBarItems()
         configureTextView()
         configureAuthorTextView()
         configureNavigationTitle()
         
+        view.backgroundColor = .systemGray6
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
         
     }
     
     fileprivate func setupNavBarItems() {
-        saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveQuote))
+        saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveQuote))
         navigationItem.rightBarButtonItem = saveButton
+
     }
     
     fileprivate func configureNavigationTitle() {
         guard let quote = quotes else {
-            return title = "Add emoji"
+            return title = "Add new quote"
         }
             quoteText.text = quote.text
             quoteAuthor.text = quote.author
-            title = "Edit Emoji"
+            title = "Edit quote"
     }
     
     private func configureTextView() {
-        quoteText.textAlignment = .left
-        quoteText.font = .preferredFont(forTextStyle: .body)
+        if  let customFont = UIFont(name: "Georgia", size: 18) {
+            quoteText.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
+        }
+        let textInset: CGFloat = 10
         quoteText.layer.cornerRadius = 10
-        quoteText.backgroundColor = .white
-        
+        quoteText.backgroundColor = .systemGray5
+        quoteText.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
+
         view.addSubview(quoteText)
-        
+
         quoteText.translatesAutoresizingMaskIntoConstraints = false
-        quoteText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        quoteText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         quoteText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         quoteText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
     }
     
     private func configureAuthorTextView() {
+        if  let customFont = UIFont(name: "Georgia", size: 20) {
+            quoteAuthor.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
+        }
+        let textInset: CGFloat = 10
+        quoteAuthor.layer.cornerRadius = 10
         quoteAuthor.textAlignment = .left
-        quoteAuthor.font = .preferredFont(forTextStyle: .body)
-        quoteAuthor.backgroundColor = .clear
+        quoteAuthor.backgroundColor = .systemGray5
+        quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
+
         view.addSubview(quoteAuthor)
         
         quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
