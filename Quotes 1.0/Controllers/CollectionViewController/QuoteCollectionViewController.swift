@@ -18,11 +18,15 @@ class QuoteCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         title = "Quotes"
-        
-        setupNavBarItems()
-        if quotes.isEmpty {
+        if let savedQuotes = FileManager.loadFromFile() {
+            quotes = savedQuotes
+        } else {
             quotes = Quote.sampleQuote
         }
+        setupNavBarItems()
+//        if quotes.isEmpty {
+//            quotes = Quote.sampleQuote
+//        }
         
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
@@ -33,8 +37,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         collectionView.dataSource = self
         
         setupNavigationBar()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +74,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     func deleteQuote(at indexPath: IndexPath) {
         quotes.remove(at: indexPath.item)
         collectionView.deleteItems(at: [indexPath])
+        FileManager.saveToFile(quotes: quotes)
     }
     
     // MARK: - CollectionViewDataSource

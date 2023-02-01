@@ -11,7 +11,6 @@ extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
     
     // MARK: - Delegate actions
     func didSaveButtonTapped(quote: Quote) {
-        
         if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first?.item {
             print(selectedIndexPath)
             quotes[selectedIndexPath] = quote
@@ -20,6 +19,7 @@ extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
             quotes.insert(quote, at: 0)
             collectionView.reloadData()
         }
+        FileManager.saveToFile(quotes: quotes)
     }
     
     // MARK: - VC Actions
@@ -28,6 +28,4 @@ extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
         viewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    
 }

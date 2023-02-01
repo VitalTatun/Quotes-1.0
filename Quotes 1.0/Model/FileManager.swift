@@ -13,10 +13,6 @@ extension FileManager {
     private static var documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     private static var archiveURL = documentsDirectory.appendingPathComponent("myQuotes").appendingPathExtension("plist")
     
-//    static func sampleQuotes() -> [Quote] {
-//        return sampleQuotes()
-//    }
-    
     static func saveToFile(quotes: [Quote]) {
         let propertyListEncoder = PropertyListEncoder()
         let encodedQuotes = try? propertyListEncoder.encode(quotes)
@@ -30,5 +26,4 @@ extension FileManager {
         print("Loaded")
         return try? propertyListDecoder.decode(Array<Quote>.self, from: retrievedQuoteData)
     }
-    
 }
