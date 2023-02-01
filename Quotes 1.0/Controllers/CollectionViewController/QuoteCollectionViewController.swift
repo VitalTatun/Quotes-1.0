@@ -19,7 +19,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         
         title = "Quotes"
         
-        
         setupNavBarItems()
         if quotes.isEmpty {
             quotes = Quote.sampleQuote
@@ -27,7 +26,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
-        collectionView.backgroundColor = .systemGray6
+        collectionView.backgroundColor = UIColor(named: "CollectionBackgroundColor")
         
         
         collectionView.delegate = self
@@ -57,9 +56,8 @@ class QuoteCollectionViewController: UICollectionViewController {
     }
     
     fileprivate func setupNavBarItems() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEditQuote(_:)))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addQuote(_:)))
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
-        //        let quoteNameButton = UIBarButtonItem(title: "QUOTES", style: .plain, target: .none, action: nil)
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 30, weight: .light)
         ]
@@ -68,8 +66,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
         navigationItem.rightBarButtonItems = [addButton, searchButton]
-        //        navigationItem.leftBarButtonItem = quoteNameButton
-        //        quoteNameButton.setTitleTextAttributes(attributes, for:.normal)
     }
     
     
@@ -88,23 +84,20 @@ class QuoteCollectionViewController: UICollectionViewController {
         //        let colorIndex = indexPath.item % colors.count
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: QuoteCollectionViewCell.self), for: indexPath) as! QuoteCollectionViewCell
-        let quotes = quotes[indexPath.item]
-        cell.backgroundColor = .systemGray5
-        cell.layer.cornerRadius = 10
-        cell.setUpCollectionCell(with: quotes)
+        let item = quotes[indexPath.item]
+        cell.backgroundColor = UIColor(named: "ItemBackgroundColor")
+        cell.setUpCollectionCell(with: item)
         return cell
     }
-    
     
     // MARK: - CollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let quoteToEdit = quotes[indexPath.item]
         let addEditViewController = AddQuoteViewController()
         addEditViewController.quotes = quoteToEdit
+        addEditViewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(addEditViewController, animated: true)
     }
-    
-    
 }
 
 // MARK:  - Flow Layout Delegate

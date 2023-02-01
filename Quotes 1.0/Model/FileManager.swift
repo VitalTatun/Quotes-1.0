@@ -17,9 +17,9 @@ extension FileManager {
 //        return sampleQuotes()
 //    }
     
-    static func saveToFile(quote: [Quote]) {
+    static func saveToFile(quotes: [Quote]) {
         let propertyListEncoder = PropertyListEncoder()
-        let encodedQuotes = try? propertyListEncoder.encode(quote)
+        let encodedQuotes = try? propertyListEncoder.encode(quotes)
         try? encodedQuotes?.write(to: archiveURL, options: .noFileProtection)
         print("Saved")
     }

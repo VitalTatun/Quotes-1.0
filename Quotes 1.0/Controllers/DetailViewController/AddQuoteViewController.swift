@@ -21,10 +21,6 @@ class AddQuoteViewController: UIViewController {
     let quoteAuthor = UITextView()
     var saveButton = UIBarButtonItem()
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +29,7 @@ class AddQuoteViewController: UIViewController {
         configureAuthorTextView()
         configureNavigationTitle()
         
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = UIColor(named: "CollectionBackgroundColor")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,9 +59,9 @@ class AddQuoteViewController: UIViewController {
         }
         let textInset: CGFloat = 10
         quoteText.layer.cornerRadius = 10
-        quoteText.backgroundColor = .systemGray5
+        quoteText.backgroundColor = UIColor(named: "ItemBackgroundColor")
         quoteText.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
-
+        quoteText.becomeFirstResponder()
         view.addSubview(quoteText)
 
         quoteText.translatesAutoresizingMaskIntoConstraints = false
@@ -80,8 +76,7 @@ class AddQuoteViewController: UIViewController {
         }
         let textInset: CGFloat = 10
         quoteAuthor.layer.cornerRadius = 10
-        quoteAuthor.textAlignment = .left
-        quoteAuthor.backgroundColor = .systemGray5
+        quoteAuthor.backgroundColor = UIColor(named: "ItemBackgroundColor")
         quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
 
         view.addSubview(quoteAuthor)
@@ -96,18 +91,19 @@ class AddQuoteViewController: UIViewController {
     }
     
     @objc func saveQuote() {
-        let text = quoteText.text
+        guard let text = quoteText.text else {return}
         let author = quoteAuthor.text ?? ""
-        
+        let defaultQuote = Quote(text: text, author: author)
         if validate(textView: quoteText) {
             // In case textView is not empty
-            quotes = Quote(text: text!, author: author, isFavorite: false)
-            quoteViewControllerDelegate?.didSaveButtonTapped(quote: quotes!)
+            quotes = Quote(text: text, author: author)
+            quoteViewControllerDelegate?.didSaveButtonTapped(quote: defaultQuote)
             navigationController?.popViewController(animated: true)
         } else {
             // in case textView is empty
             print("No data")
         }
+
     }
     
     func validate(textView: UITextView) -> Bool {
