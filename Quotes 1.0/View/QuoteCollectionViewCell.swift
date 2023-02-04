@@ -33,7 +33,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
         }
         quoteLabel.textAlignment = .left
         quoteLabel.numberOfLines = 0
-        quoteLabel.lineBreakMode = .byWordWrapping
+        quoteLabel.lineBreakMode = .byTruncatingTail
         quoteLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false

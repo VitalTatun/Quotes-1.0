@@ -25,7 +25,6 @@ extension QuoteCollectionViewController {
                     activityController = UIActivityViewController(activityItems: [defautQuote], applicationActivities: nil)
                 print(defautQuote)
                     self.present(activityController, animated: true, completion: nil)
-
             }
             
             let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { (action) in
@@ -43,7 +42,6 @@ extension QuoteCollectionViewController {
             
             let addToFavorites = UIAction(title: "Add to favorites", image: UIImage(systemName: "suit.heart")) { (action) in
                 // TODO: Add to favorites option ?
-                
             }
             return UIMenu(title: "", image: nil, identifier: nil,
                           options: [], children: [delete, share, copy, addToFavorites])

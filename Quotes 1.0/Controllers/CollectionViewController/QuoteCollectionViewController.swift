@@ -12,8 +12,6 @@ class QuoteCollectionViewController: UICollectionViewController {
     var quotes: [Quote] = []
     let appTitle = UILabel()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,18 +22,12 @@ class QuoteCollectionViewController: UICollectionViewController {
             quotes = Quote.sampleQuote
         }
         setupNavBarItems()
-//        if quotes.isEmpty {
-//            quotes = Quote.sampleQuote
-//        }
-        
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
         collectionView.backgroundColor = UIColor(named: "CollectionBackgroundColor")
         
-        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         setupNavigationBar()
     }
     
@@ -79,7 +71,13 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     // MARK: - CollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        quotes.count
+        let emptyViewMessage = "Наслаждайся миром какой он есть, пока его не изменили, ничего тебе не объяснив"
+        if quotes.count == 0 {
+                collectionView.setEmptyMessage(emptyViewMessage)
+            } else {
+                collectionView.restore()
+            }
+            return quotes.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,7 +111,6 @@ extension QuoteCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height / 1.6)
     }
-    
 }
 
 
