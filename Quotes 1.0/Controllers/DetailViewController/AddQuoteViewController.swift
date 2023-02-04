@@ -17,14 +17,19 @@ class AddQuoteViewController: UIViewController {
     
     weak var quoteViewControllerDelegate: AddQuoteViewControllerDelegate?
     
+    private var scrollView = UIScrollView()
+    let contentView = UIView()
+    
     let quoteText = UITextView()
     let quoteAuthor = UITextView()
-    var saveButton = UIBarButtonItem()
-    var authorPlaceholder = UILabel()
-    var textPlaceholder = UILabel()
+    let saveButton = UIBarButtonItem()
+    let authorPlaceholder = UILabel()
+    let textPlaceholder = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScrollView()
+        setupContentView()
         
         setupNavBarItems()
         configureTextView()
@@ -32,6 +37,8 @@ class AddQuoteViewController: UIViewController {
         configureNavigationTitle()
         setupAuthorPlaceholder()
         setupTextPlaceholder()
+        registerForKeyboardNotifications()
+        
         updateSaveButtonState()
         
         view.backgroundColor = UIColor(named: "ItemBackgroundColor")
@@ -42,8 +49,47 @@ class AddQuoteViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    fileprivate func setupScrollView() {
+        scrollView.frame = view.bounds
+        scrollView.contentSize = contentSize
+        view.addSubview(scrollView)
+    }
+    private func setupContentView() {
+        contentView.frame.size = contentSize
+        scrollView.addSubview(contentView)
+    }
+    
+    private var contentSize: CGSize {
+        CGSize(width: view.frame.width, height: view.frame.height-200)
+    }
+    
+    func registerForKeyboardNotifications() {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+        @objc func keyboardWasShown(_ notificiation: NSNotification) {
+            guard let info = notificiation.userInfo,
+                let keyboardFrameValue =
+                info[UIResponder.keyboardFrameBeginUserInfoKey]
+                as? NSValue else { return }
+            let keyboardFrame = keyboardFrameValue.cgRectValue
+            let keyboardSize = keyboardFrame.size
+            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
+            bottom: keyboardSize.height, right: 0.0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+        }
+        @objc func keyboardWillBeHidden(_ notification:
+           NSNotification) {
+            let contentInsets = UIEdgeInsets.zero
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+        }
+    
     fileprivate func setupNavBarItems() {
-        saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveQuote))
+        saveButton.action = #selector(saveQuote)
+        saveButton.style = .plain
+        saveButton.title = "Save"
         navigationItem.rightBarButtonItem = saveButton
     }
     
@@ -88,12 +134,12 @@ class AddQuoteViewController: UIViewController {
         quoteText.backgroundColor = UIColor(named: "ItemBackgroundColor")
         quoteText.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
         quoteText.becomeFirstResponder()
-        view.addSubview(quoteText)
+        contentView.addSubview(quoteText)
         
         quoteText.translatesAutoresizingMaskIntoConstraints = false
-        quoteText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        quoteText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        quoteText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        quoteText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        quoteText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        quoteText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
     }
     
     private func configureAuthorTextView() {
@@ -104,13 +150,13 @@ class AddQuoteViewController: UIViewController {
         quoteAuthor.backgroundColor = UIColor(named: "ItemBackgroundColor")
         quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
         
-        view.addSubview(quoteAuthor)
+        contentView.addSubview(quoteAuthor)
         
         quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
         quoteAuthor.topAnchor.constraint(equalTo: quoteText.bottomAnchor).isActive = true
-        quoteAuthor.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        quoteAuthor.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        quoteAuthor.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        quoteAuthor.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        quoteAuthor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        quoteAuthor.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         quoteAuthor.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
