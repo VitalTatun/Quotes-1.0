@@ -32,8 +32,8 @@ class AddQuoteViewController: UIViewController {
         setupContentView()
         
         setupNavBarItems()
-        configureTextView()
         configureAuthorTextView()
+        configureTextView()
         configureNavigationTitle()
         setupAuthorPlaceholder()
         setupTextPlaceholder()
@@ -41,7 +41,7 @@ class AddQuoteViewController: UIViewController {
         
         updateSaveButtonState()
         
-        view.backgroundColor = UIColor(named: "ItemBackgroundColor")
+        view.backgroundColor = UIColor.itemBackgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +52,7 @@ class AddQuoteViewController: UIViewController {
     fileprivate func setupScrollView() {
         scrollView.frame = view.bounds
         scrollView.contentSize = contentSize
+        scrollView.showsVerticalScrollIndicator = false
         view.addSubview(scrollView)
     }
     private func setupContentView() {
@@ -124,40 +125,39 @@ class AddQuoteViewController: UIViewController {
         textPlaceholder.textColor = .tertiaryLabel
         textPlaceholder.isHidden = !quoteText.text.isEmpty
     }
-    
+    private func configureAuthorTextView() {
+        if  let customFont = UIFont(name: "Georgia", size: 20) {
+            quoteAuthor.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
+        }
+        let textInset: CGFloat = 10
+        quoteAuthor.backgroundColor = UIColor.itemBackgroundColor
+        quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
+        
+        contentView.addSubview(quoteAuthor)
+        
+        quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
+        quoteAuthor.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        quoteAuthor.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        quoteAuthor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        quoteAuthor.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    }
     
     private func configureTextView() {
         if  let customFont = UIFont(name: "Georgia", size: 18) {
             quoteText.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
         }
         let textInset: CGFloat = 10
-        quoteText.backgroundColor = UIColor(named: "ItemBackgroundColor")
+        quoteText.backgroundColor = UIColor.itemBackgroundColor
+        quoteText.tintColor = UIColor.navigationBarTintColor
         quoteText.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
         quoteText.becomeFirstResponder()
         contentView.addSubview(quoteText)
         
         quoteText.translatesAutoresizingMaskIntoConstraints = false
-        quoteText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        quoteText.topAnchor.constraint(equalTo: quoteAuthor.bottomAnchor).isActive = true
         quoteText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         quoteText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-    }
-    
-    private func configureAuthorTextView() {
-        if  let customFont = UIFont(name: "Georgia", size: 20) {
-            quoteAuthor.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
-        }
-        let textInset: CGFloat = 10
-        quoteAuthor.backgroundColor = UIColor(named: "ItemBackgroundColor")
-        quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
-        
-        contentView.addSubview(quoteAuthor)
-        
-        quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
-        quoteAuthor.topAnchor.constraint(equalTo: quoteText.bottomAnchor).isActive = true
-        quoteAuthor.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        quoteAuthor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        quoteAuthor.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
-        quoteAuthor.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        quoteText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
     
     @objc func saveQuote() {

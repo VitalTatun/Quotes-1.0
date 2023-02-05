@@ -10,7 +10,6 @@ import UIKit
 class QuoteCollectionViewController: UICollectionViewController {
     
     var quotes: [Quote] = []
-    let appTitle = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +21,14 @@ class QuoteCollectionViewController: UICollectionViewController {
             quotes = Quote.sampleQuote
         }
         setupNavBarItems()
+        setupNavigationBar()
+
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
-        collectionView.backgroundColor = UIColor(named: "CollectionBackgroundColor")
+        collectionView.backgroundColor = UIColor.collectionBackgroundColor
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +41,8 @@ class QuoteCollectionViewController: UICollectionViewController {
         let standartTextFont = UIFont(name: "Georgia Bold", size: 20)
         if let appearance = navigationController?.navigationBar.standardAppearance {
             guard let standartTextFont = standartTextFont, let largeTextFont = largeTextFont else {return}
-            appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "Navigation Bar Titles")!, .font: standartTextFont]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Navigation Bar Titles")!, .font: largeTextFont]
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.navigationBarTitles, .font: standartTextFont]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.navigationBarTitles, .font: largeTextFont]
             navigationController?.navigationBar.standardAppearance = appearance
             navigationController?.navigationBar.compactAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -56,7 +56,7 @@ class QuoteCollectionViewController: UICollectionViewController {
             .font: UIFont.systemFont(ofSize: 30, weight: .light)
         ]
         navigationItem.backButtonTitle = "Back"
-        navigationController?.navigationBar.tintColor = UIColor(named: "Navigation Bar Titles")
+        navigationController?.navigationBar.tintColor = UIColor.navigationBarTintColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
         navigationItem.rightBarButtonItems = [addButton, searchButton]
@@ -71,7 +71,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     // MARK: - CollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let emptyViewMessage = "Наслаждайся миром какой он есть, пока его не изменили, ничего тебе не объяснив"
+        let emptyViewMessage = "No quotes found"
         if quotes.count == 0 {
                 collectionView.setEmptyMessage(emptyViewMessage)
             } else {
@@ -81,12 +81,9 @@ class QuoteCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        let colors = UIColor.palette()
-        //        let colorIndex = indexPath.item % colors.count
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: QuoteCollectionViewCell.self), for: indexPath) as! QuoteCollectionViewCell
         let item = quotes[indexPath.item]
-        cell.backgroundColor = UIColor(named: "ItemBackgroundColor")
+        cell.backgroundColor = UIColor.itemBackgroundColor
         cell.setUpCollectionCell(with: item)
         return cell
     }
@@ -99,6 +96,10 @@ class QuoteCollectionViewController: UICollectionViewController {
         addEditViewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(addEditViewController, animated: true)
     }
+    
+//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        <#code#>
+//    }
 }
 
 // MARK:  - Flow Layout Delegate

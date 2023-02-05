@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		960C14E7298ABD4E0043FCE2 /* CollectionView + EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C14E6298ABD4E0043FCE2 /* CollectionView + EmptyView.swift */; };
 		9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674779B2969B79200FD55DA /* UIColor+Palette.swift */; };
-		9682A63C298436CB003FA31D /* CormorantGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */; };
-		9682A63D298436CD003FA31D /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */; };
-		9682A63F2984599A003FA31D /* CormorantGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A63E2984599A003FA31D /* CormorantGaramond-Medium.ttf */; };
 		9682A64229846C26003FA31D /* Georgia Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A64029846C25003FA31D /* Georgia Bold.ttf */; };
 		9682A64329846C26003FA31D /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A64129846C26003FA31D /* Georgia.ttf */; };
 		969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B42966D5B100E908F1 /* QuoteModel.swift */; };
@@ -30,9 +27,6 @@
 /* Begin PBXFileReference section */
 		960C14E6298ABD4E0043FCE2 /* CollectionView + EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + EmptyView.swift"; sourceTree = "<group>"; };
 		9674779B2969B79200FD55DA /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
-		9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Regular.ttf"; sourceTree = "<group>"; };
-		9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Bold.ttf"; sourceTree = "<group>"; };
-		9682A63E2984599A003FA31D /* CormorantGaramond-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Medium.ttf"; sourceTree = "<group>"; };
 		9682A64029846C25003FA31D /* Georgia Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Bold.ttf"; sourceTree = "<group>"; };
 		9682A64129846C26003FA31D /* Georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Georgia.ttf; sourceTree = "<group>"; };
 		969403B42966D5B100E908F1 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
@@ -73,9 +67,6 @@
 		9682A63929843686003FA31D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				9682A63B298436B6003FA31D /* CormorantGaramond-Bold.ttf */,
-				9682A63E2984599A003FA31D /* CormorantGaramond-Medium.ttf */,
-				9682A63A298436AD003FA31D /* CormorantGaramond-Regular.ttf */,
 				9682A64029846C25003FA31D /* Georgia Bold.ttf */,
 				9682A64129846C26003FA31D /* Georgia.ttf */,
 			);
@@ -234,11 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FF2A172966D19F00B21E29 /* LaunchScreen.storyboard in Resources */,
-				9682A63C298436CB003FA31D /* CormorantGaramond-Bold.ttf in Resources */,
 				9682A64329846C26003FA31D /* Georgia.ttf in Resources */,
-				9682A63D298436CD003FA31D /* CormorantGaramond-Regular.ttf in Resources */,
 				9682A64229846C26003FA31D /* Georgia Bold.ttf in Resources */,
-				9682A63F2984599A003FA31D /* CormorantGaramond-Medium.ttf in Resources */,
 				96FF2A142966D19F00B21E29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
