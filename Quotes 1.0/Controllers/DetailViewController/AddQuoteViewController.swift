@@ -35,8 +35,7 @@ class AddQuoteViewController: UIViewController {
         configureAuthorTextView()
         configureTextView()
         configureNavigationTitle()
-        setupAuthorPlaceholder()
-        setupTextPlaceholder()
+        setupPlaceholders()
         registerForKeyboardNotifications()
         
         updateSaveButtonState()
@@ -44,12 +43,7 @@ class AddQuoteViewController: UIViewController {
         view.backgroundColor = UIColor.itemBackgroundColor
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
-    }
-    
-    fileprivate func setupScrollView() {
+    private func setupScrollView() {
         scrollView.frame = view.bounds
         scrollView.contentSize = contentSize
         scrollView.showsVerticalScrollIndicator = false
@@ -61,7 +55,7 @@ class AddQuoteViewController: UIViewController {
     }
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height-200)
+        CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     func registerForKeyboardNotifications() {
@@ -87,37 +81,35 @@ class AddQuoteViewController: UIViewController {
             scrollView.scrollIndicatorInsets = contentInsets
         }
     
-    fileprivate func setupNavBarItems() {
+    private func setupNavBarItems() {
         saveButton.action = #selector(saveQuote)
         saveButton.style = .plain
-        saveButton.title = "Save"
+        saveButton.title = String(localized: "save_button")
         navigationItem.rightBarButtonItem = saveButton
     }
     
-    fileprivate func configureNavigationTitle() {
+    private func configureNavigationTitle() {
         if let quote = quotes {
             quoteText.text = quote.text
             quoteAuthor.text = quote.author
-            title = "Edit quote"
+            title = String(localized: "navigation_bar_edit_title")
         } else {
-            return title = "Add new quote"
+            return title = String(localized: "navigation_bar_new_title")
         }
     }
     
-    fileprivate func setupAuthorPlaceholder() {
+    private func setupPlaceholders() {
         quoteAuthor.delegate = self
-        authorPlaceholder.text = "Author"
+        authorPlaceholder.text = String(localized: "author_placeholder")
         authorPlaceholder.font = UIFont(name: "Georgia", size: (quoteAuthor.font?.pointSize)!)
         authorPlaceholder.sizeToFit()
         quoteAuthor.addSubview(authorPlaceholder)
         authorPlaceholder.frame.origin = CGPoint(x: 15, y: (quoteAuthor.font?.pointSize)! / 2)
         authorPlaceholder.textColor = .tertiaryLabel
         authorPlaceholder.isHidden = !quoteAuthor.text.isEmpty
-    }
     
-    fileprivate func setupTextPlaceholder() {
         quoteText.delegate = self
-        textPlaceholder.text = "Text"
+        textPlaceholder.text = String(localized: "quote_placeholder")
         textPlaceholder.font = UIFont(name: "Georgia", size: (quoteText.font?.pointSize)!)
         textPlaceholder.sizeToFit()
         quoteText.addSubview(textPlaceholder)
@@ -131,10 +123,10 @@ class AddQuoteViewController: UIViewController {
         }
         let textInset: CGFloat = 10
         quoteAuthor.backgroundColor = UIColor.itemBackgroundColor
+        quoteAuthor.tintColor = UIColor.navigationBarTintColor
         quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
         
         contentView.addSubview(quoteAuthor)
-        
         quoteAuthor.translatesAutoresizingMaskIntoConstraints = false
         quoteAuthor.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         quoteAuthor.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
@@ -146,6 +138,7 @@ class AddQuoteViewController: UIViewController {
         if  let customFont = UIFont(name: "Georgia", size: 18) {
             quoteText.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
         }
+        quoteText.isScrollEnabled = false
         let textInset: CGFloat = 10
         quoteText.backgroundColor = UIColor.itemBackgroundColor
         quoteText.tintColor = UIColor.navigationBarTintColor
@@ -157,7 +150,7 @@ class AddQuoteViewController: UIViewController {
         quoteText.topAnchor.constraint(equalTo: quoteAuthor.bottomAnchor).isActive = true
         quoteText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         quoteText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        quoteText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+        quoteText.heightAnchor.constraint(greaterThanOrEqualTo: contentView.heightAnchor).isActive = true
     }
     
     @objc func saveQuote() {

@@ -14,6 +14,7 @@
 		969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B42966D5B100E908F1 /* QuoteModel.swift */; };
 		969403B72966E03100E908F1 /* QuoteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */; };
 		969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */; };
+		96A6F3CB29A00C580005C0AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96A6F3CD29A00C580005C0AE /* Localizable.strings */; };
 		96CB03852975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB03842975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift */; };
 		96CB038A29754B78006A00F0 /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038929754B78006A00F0 /* AddQuoteViewController.swift */; };
 		96CB038D297560D9006A00F0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038C297560D9006A00F0 /* FileManager.swift */; };
@@ -32,6 +33,8 @@
 		969403B42966D5B100E908F1 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		969403B62966E03100E908F1 /* QuoteCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewController.swift; sourceTree = "<group>"; };
 		969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		96A6F3CC29A00C580005C0AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		96A6F3CE29A00C690005C0AE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96CB03842975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteCollectionViewController+ContextMenu.swift"; sourceTree = "<group>"; };
 		96CB038929754B78006A00F0 /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		96CB038C297560D9006A00F0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 				969403B12966D57C00E908F1 /* Model */,
 				969403B22966D58100E908F1 /* View */,
 				969403B32966D58800E908F1 /* Controllers */,
+				96A6F3CD29A00C580005C0AE /* Localizable.strings */,
 			);
 			path = "Quotes 1.0";
 			sourceTree = "<group>";
@@ -208,6 +212,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 96FF29FE2966D19E00B21E29;
 			productRefGroup = 96FF2A082966D19E00B21E29 /* Products */;
@@ -224,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A6F3CB29A00C580005C0AE /* Localizable.strings in Resources */,
 				96FF2A172966D19F00B21E29 /* LaunchScreen.storyboard in Resources */,
 				9682A64329846C26003FA31D /* Georgia.ttf in Resources */,
 				9682A64229846C26003FA31D /* Georgia Bold.ttf in Resources */,
@@ -255,6 +261,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		96A6F3CD29A00C580005C0AE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A6F3CC29A00C580005C0AE /* en */,
+				96A6F3CE29A00C690005C0AE /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		96FF2A152966D19F00B21E29 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -270,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -330,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

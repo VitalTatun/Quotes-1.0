@@ -12,7 +12,6 @@ extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
     // MARK: - Delegate actions
     func didSaveButtonTapped(quote: Quote) {
         if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first?.item {
-            print(selectedIndexPath)
             quotes[selectedIndexPath] = quote
             collectionView.reloadData()
         } else {

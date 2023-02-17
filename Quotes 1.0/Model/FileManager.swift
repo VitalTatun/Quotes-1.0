@@ -17,13 +17,11 @@ extension FileManager {
         let propertyListEncoder = PropertyListEncoder()
         let encodedQuotes = try? propertyListEncoder.encode(quotes)
         try? encodedQuotes?.write(to: archiveURL, options: .noFileProtection)
-        print("Saved")
     }
     
     static func loadFromFile() -> [Quote]? {
         guard let retrievedQuoteData = try? Data(contentsOf: archiveURL) else { return nil }
         let propertyListDecoder = PropertyListDecoder()
-        print("Loaded")
         return try? propertyListDecoder.decode(Array<Quote>.self, from: retrievedQuoteData)
     }
 }

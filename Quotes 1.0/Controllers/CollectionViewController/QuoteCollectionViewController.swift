@@ -31,11 +31,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         collectionView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = false
-    }
-    
     fileprivate func setupNavigationBar() {
         let largeTextFont = UIFont(name: "Georgia Bold", size: 30)
         let standartTextFont = UIFont(name: "Georgia Bold", size: 20)
@@ -55,7 +50,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 30, weight: .light)
         ]
-        navigationItem.backButtonTitle = "Back"
+        navigationItem.backButtonTitle = String(localized: "back_button")
         navigationController?.navigationBar.tintColor = UIColor.navigationBarTintColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
