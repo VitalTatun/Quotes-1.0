@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Quotes 1.0
+
+  Created by Виталий Татун on 17.02.23.
+  
+*/
+//Main Screen Context Menu
+"context_menu_delete_action" = "Выдаліць";
+"context_menu_share_action" = "Падзяліцца";
+"context_menu_copy_action" = "Скапіраваць";
+
+//AddEdit Screen
+"back_button" = "Назад";
+"save_button" = "Захаваць";
+"navigation_bar_edit_title" = "Адрэдагаваць";
+"navigation_bar_new_title" = "Дабавіць";
+"author_placeholder" = "Аўтар";
+"quote_placeholder" = "Тэкст";
