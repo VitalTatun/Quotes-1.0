@@ -9,6 +9,7 @@
 "context_menu_delete_action" = "Delete";
 "context_menu_share_action" = "Share";
 "context_menu_copy_action" = "Copy";
+"no_quote_added_message" = "No quotes found";
 
 //AddEdit Screen
 "back_button" = "Back";
@@ -16,4 +17,4 @@
 "navigation_bar_edit_title" = "Edit quote";
 "navigation_bar_new_title" = "Add new quote";
 "author_placeholder" = "Author";
-"quote_placeholder" = "Text";
+"quote_placeholder" = "Type quote here..";

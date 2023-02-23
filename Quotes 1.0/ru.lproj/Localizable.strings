@@ -9,7 +9,7 @@
 "context_menu_delete_action" = "Удалить";
 "context_menu_share_action" = "Поделиться";
 "context_menu_copy_action" = "Копировать";
-
+"no_quote_added_message" = "Цитат не добавлено";
 
 //AddEdit Screen
 "back_button" = "Назад";

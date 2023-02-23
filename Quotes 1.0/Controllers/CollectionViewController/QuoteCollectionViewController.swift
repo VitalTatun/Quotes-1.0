@@ -66,7 +66,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     // MARK: - CollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let emptyViewMessage = "No quotes found"
+        let emptyViewMessage = String(localized: "no_quote_added_message")
         if quotes.count == 0 {
                 collectionView.setEmptyMessage(emptyViewMessage)
             } else {
@@ -91,7 +91,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         addEditViewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(addEditViewController, animated: true)
     }
-    
 //    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //        <#code#>
 //    }

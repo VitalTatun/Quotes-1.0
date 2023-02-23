@@ -124,6 +124,7 @@ class AddQuoteViewController: UIViewController {
         let textInset: CGFloat = 10
         quoteAuthor.backgroundColor = UIColor.itemBackgroundColor
         quoteAuthor.tintColor = UIColor.navigationBarTintColor
+        quoteAuthor.becomeFirstResponder()
         quoteAuthor.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
         
         contentView.addSubview(quoteAuthor)
@@ -143,7 +144,6 @@ class AddQuoteViewController: UIViewController {
         quoteText.backgroundColor = UIColor.itemBackgroundColor
         quoteText.tintColor = UIColor.navigationBarTintColor
         quoteText.textContainerInset = UIEdgeInsets(top: textInset, left: textInset, bottom: textInset, right: textInset)
-        quoteText.becomeFirstResponder()
         contentView.addSubview(quoteText)
         
         quoteText.translatesAutoresizingMaskIntoConstraints = false
