@@ -10,7 +10,8 @@
 "context_menu_share_action" = "Share";
 "context_menu_copy_action" = "Copy";
 "no_quote_added_message" = "No quotes found";
-
+"searchBar_placeholder" = "Search by text or author";
+ 
 //AddEdit Screen
 "back_button" = "Back";
 "save_button" = "Save";

@@ -10,7 +10,7 @@
 "context_menu_share_action" = "Падзяліцца";
 "context_menu_copy_action" = "Скапіраваць";
 "no_quote_added_message" = "Цытат не дабаўлена";
-
+"searchBar_placeholder" = "Пошук па аўтару ці тэксту";
 
 //AddEdit Screen
 "back_button" = "Назад";

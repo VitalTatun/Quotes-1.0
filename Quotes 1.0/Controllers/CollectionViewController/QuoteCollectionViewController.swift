@@ -42,7 +42,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     func setupSearchBar() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchBar.placeholder = "Search by text or author"
+        searchController.searchBar.placeholder = String(localized: "searchBar_placeholder")
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.definesPresentationContext = true
@@ -121,7 +121,12 @@ class QuoteCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let quoteToEdit = quotes[indexPath.item]
         let addEditViewController = AddQuoteViewController()
-        addEditViewController.quotes = quoteToEdit
+        if isFiltering {
+            let filteredQuote = filteredQuotes[indexPath.item]
+            addEditViewController.quotes = filteredQuote
+        } else {
+            addEditViewController.quotes = quoteToEdit
+        }
         addEditViewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(addEditViewController, animated: true)
     }

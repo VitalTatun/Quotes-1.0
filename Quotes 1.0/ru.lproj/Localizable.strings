@@ -10,6 +10,7 @@
 "context_menu_share_action" = "Поделиться";
 "context_menu_copy_action" = "Копировать";
 "no_quote_added_message" = "Цитат не добавлено";
+"searchBar_placeholder" = "Поиск по автору или тексту";
 
 //AddEdit Screen
 "back_button" = "Назад";
