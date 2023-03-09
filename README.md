@@ -7,7 +7,7 @@ The main view was made using collectionView with fixed height. And it's localize
 
 - [x] Display and create quotes
 - [x] Edit quotes
-- [x] Delete quotes
+- [x] Delete/Share/Copy quotes
 - [x] Support for dark and light mode
 - [x] Search by text or author
 - [ ] Quick action
