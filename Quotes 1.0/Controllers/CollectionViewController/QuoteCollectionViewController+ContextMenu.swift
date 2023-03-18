@@ -21,11 +21,10 @@ extension QuoteCollectionViewController {
             let share = UIAction(
                 title: String(localized: "context_menu_share_action"),
                 image: UIImage(systemName: "square.and.arrow.up")) {(action) in
-                // TODO: Share option as Text
                 let activityController: UIActivityViewController
                 guard let text = self.quotes[indexPath.item].text,
-                      let quote = self.quotes[indexPath.item].author else {return}
-                let defautQuote = text + quote
+                      let author = self.quotes[indexPath.item].author else {return}
+                let defautQuote = text + author
                     activityController = UIActivityViewController(activityItems: [defautQuote], applicationActivities: nil)
                 print(defautQuote)
                     self.present(activityController, animated: true, completion: nil)
@@ -34,7 +33,6 @@ extension QuoteCollectionViewController {
             let copy = UIAction(
                 title: String(localized: "context_menu_copy_action"),
                 image: UIImage(systemName: "doc.on.doc")) { (action) in
-                // TODO: Copy quote as text option
                 let pasteboard = UIPasteboard.general
                 guard let text = self.quotes[indexPath.item].text else { return }
                 guard let author = self.quotes[indexPath.item].author else {

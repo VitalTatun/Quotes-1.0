@@ -44,42 +44,46 @@ class AddQuoteViewController: UIViewController {
     }
     
     private func setupScrollView() {
-        scrollView.frame = view.bounds
-        scrollView.contentSize = contentSize
-        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
+        
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     private func setupContentView() {
-        contentView.frame.size = contentSize
         scrollView.addSubview(contentView)
-    }
-    
-    private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
     }
     
     func registerForKeyboardNotifications() {
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        }
-        @objc func keyboardWasShown(_ notificiation: NSNotification) {
-            guard let info = notificiation.userInfo,
-                let keyboardFrameValue =
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc func keyboardWasShown(_ notificiation: NSNotification) {
+        guard let info = notificiation.userInfo,
+              let keyboardFrameValue =
                 info[UIResponder.keyboardFrameBeginUserInfoKey]
                 as? NSValue else { return }
-            let keyboardFrame = keyboardFrameValue.cgRectValue
-            let keyboardSize = keyboardFrame.size
-            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
-            bottom: keyboardSize.height, right: 0.0)
-            scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
-        }
-        @objc func keyboardWillBeHidden(_ notification:
-           NSNotification) {
-            let contentInsets = UIEdgeInsets.zero
-            scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
-        }
+        let keyboardFrame = keyboardFrameValue.cgRectValue
+        let keyboardSize = keyboardFrame.size
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
+                                         bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    @objc func keyboardWillBeHidden(_ notification:
+                                    NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
     
     private func setupNavBarItems() {
         saveButton.action = #selector(saveQuote)
@@ -107,7 +111,7 @@ class AddQuoteViewController: UIViewController {
         authorPlaceholder.frame.origin = CGPoint(x: 15, y: (quoteAuthor.font?.pointSize)! / 2)
         authorPlaceholder.textColor = .tertiaryLabel
         authorPlaceholder.isHidden = !quoteAuthor.text.isEmpty
-    
+        
         quoteText.delegate = self
         textPlaceholder.text = String(localized: "quote_placeholder")
         textPlaceholder.font = UIFont(name: "Georgia", size: (quoteText.font?.pointSize)!)
@@ -117,6 +121,7 @@ class AddQuoteViewController: UIViewController {
         textPlaceholder.textColor = .tertiaryLabel
         textPlaceholder.isHidden = !quoteText.text.isEmpty
     }
+    
     private func configureAuthorTextView() {
         if  let customFont = UIFont(name: "Georgia", size: 20) {
             quoteAuthor.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
@@ -150,7 +155,7 @@ class AddQuoteViewController: UIViewController {
         quoteText.topAnchor.constraint(equalTo: quoteAuthor.bottomAnchor).isActive = true
         quoteText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         quoteText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        quoteText.heightAnchor.constraint(greaterThanOrEqualTo: contentView.heightAnchor).isActive = true
+        quoteText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     @objc func saveQuote() {

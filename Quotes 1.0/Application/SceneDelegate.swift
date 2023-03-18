@@ -50,6 +50,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    
+    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        switch shortcutItem.type {
+        case "addNewQuote":
+            let layout = UICollectionViewFlowLayout()
+            let mainPageViewController = QuoteCollectionViewController(collectionViewLayout: layout)
+            window?.rootViewController = UINavigationController(rootViewController: mainPageViewController)
+            mainPageViewController.addQuote(UIBarButtonItem())
+        default:
+            break
+        }
+    }
 }
 

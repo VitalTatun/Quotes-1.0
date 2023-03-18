@@ -34,9 +34,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
         collectionView.backgroundColor = UIColor.collectionBackgroundColor
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
     func setupSearchBar() {
@@ -89,6 +86,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - CollectionViewDataSource
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let emptyViewMessage = String(localized: "no_quote_added_message")
         if quotes.count == 0 {
@@ -118,6 +116,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - CollectionViewDelegate
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let quoteToEdit = quotes[indexPath.item]
         let addEditViewController = AddQuoteViewController()
@@ -130,16 +129,14 @@ class QuoteCollectionViewController: UICollectionViewController {
         addEditViewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(addEditViewController, animated: true)
     }
-    //    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    //        <#code#>
-    //    }
 }
 
-// MARK:  - Flow Layout Delegate
+// MARK: - Flow Layout Delegate
+
 extension QuoteCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -148,6 +145,7 @@ extension QuoteCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: SearchBar
+
 extension QuoteCollectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text,
