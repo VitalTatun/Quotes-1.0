@@ -27,4 +27,8 @@ extension QuoteCollectionViewController: AddQuoteViewControllerDelegate {
         viewController.quoteViewControllerDelegate = self
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    @objc func goToSettings() {
+        navigationController?.pushViewController(SettingsViewController(style: .insetGrouped), animated: true)
+    }
 }

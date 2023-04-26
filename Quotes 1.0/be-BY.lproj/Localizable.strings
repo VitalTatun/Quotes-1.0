@@ -19,3 +19,14 @@
 "navigation_bar_new_title" = "Дабавіць";
 "author_placeholder" = "Аўтар";
 "quote_placeholder" = "Тэкст";
+
+//Settings Screen
+"settings_screen_title" = "Настройкі";
+"settings_section_appearance" = "Афармленне";
+"settings_section_fonts" = "Шрыфты";
+
+"settings_section_appearance_light" = "Светлае";
+"settings_section_appearance_dark" = "Цёмнае";
+"settings_section_appearance_automatic" = "Аўтаматычна";
+
+"settings_section_font" = "Шрыфт";

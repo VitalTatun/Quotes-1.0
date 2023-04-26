@@ -60,7 +60,7 @@ class QuoteCollectionViewController: UICollectionViewController {
     
     fileprivate func setupNavBarItems() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addQuote(_:)))
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(goToSettings))
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 30, weight: .light)
         ]
@@ -68,7 +68,8 @@ class QuoteCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.tintColor = UIColor.navigationBarTintColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        navigationItem.rightBarButtonItems = [addButton, searchButton]
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = settingsButton
     }
     
     func deleteQuote(at indexPath: IndexPath) {
@@ -85,7 +86,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         FileManager.saveToFile(quotes: quotes)
     }
     
-    // MARK: - CollectionViewDataSource
+// MARK: - CollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let emptyViewMessage = String(localized: "no_quote_added_message")
@@ -96,7 +97,6 @@ class QuoteCollectionViewController: UICollectionViewController {
         }
         if isFiltering {
             return filteredQuotes.count
-            
         } else {
             return quotes.count
         }
@@ -115,7 +115,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: - CollectionViewDelegate
+// MARK: - CollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let quoteToEdit = quotes[indexPath.item]

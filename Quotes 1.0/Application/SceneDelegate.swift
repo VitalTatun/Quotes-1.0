@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainPageViewController = QuoteCollectionViewController(collectionViewLayout: layout)
         window?.windowScene = windowsScene
         window?.rootViewController = UINavigationController(rootViewController: mainPageViewController)
+        window?.overrideUserInterfaceStyle = SettingsUserDefaults.shared.theme.getUserInterfaceStyle()
         window?.makeKeyAndVisible()
     }
     

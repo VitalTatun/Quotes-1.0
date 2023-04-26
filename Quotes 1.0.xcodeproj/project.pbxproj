@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		960C14E7298ABD4E0043FCE2 /* CollectionView + EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C14E6298ABD4E0043FCE2 /* CollectionView + EmptyView.swift */; };
+		966EE23829F6F8E500D22BB0 /* AppearanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EE23329F6F8E500D22BB0 /* AppearanceCell.swift */; };
+		966EE23929F6F8E500D22BB0 /* SettingsUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EE23429F6F8E500D22BB0 /* SettingsUserDefaults.swift */; };
+		966EE23A29F6F8E500D22BB0 /* SectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EE23529F6F8E500D22BB0 /* SectionSettings.swift */; };
+		966EE23B29F6F8E500D22BB0 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EE23629F6F8E500D22BB0 /* AppearanceManager.swift */; };
+		966EE23C29F6F8E500D22BB0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EE23729F6F8E500D22BB0 /* SettingsViewController.swift */; };
 		9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674779B2969B79200FD55DA /* UIColor+Palette.swift */; };
 		9682A64229846C26003FA31D /* Georgia Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A64029846C25003FA31D /* Georgia Bold.ttf */; };
 		9682A64329846C26003FA31D /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9682A64129846C26003FA31D /* Georgia.ttf */; };
@@ -27,6 +32,11 @@
 
 /* Begin PBXFileReference section */
 		960C14E6298ABD4E0043FCE2 /* CollectionView + EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + EmptyView.swift"; sourceTree = "<group>"; };
+		966EE23329F6F8E500D22BB0 /* AppearanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceCell.swift; sourceTree = "<group>"; };
+		966EE23429F6F8E500D22BB0 /* SettingsUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUserDefaults.swift; sourceTree = "<group>"; };
+		966EE23529F6F8E500D22BB0 /* SectionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSettings.swift; sourceTree = "<group>"; };
+		966EE23629F6F8E500D22BB0 /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
+		966EE23729F6F8E500D22BB0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9674779B2969B79200FD55DA /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		9682A64029846C25003FA31D /* Georgia Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Bold.ttf"; sourceTree = "<group>"; };
 		9682A64129846C26003FA31D /* Georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Georgia.ttf; sourceTree = "<group>"; };
@@ -59,6 +69,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		966EE23229F6F8E500D22BB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				966EE23529F6F8E500D22BB0 /* SectionSettings.swift */,
+				966EE23329F6F8E500D22BB0 /* AppearanceCell.swift */,
+				966EE23429F6F8E500D22BB0 /* SettingsUserDefaults.swift */,
+				966EE23629F6F8E500D22BB0 /* AppearanceManager.swift */,
+				966EE23729F6F8E500D22BB0 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9674779A2969B74300FD55DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +189,7 @@
 				969403B12966D57C00E908F1 /* Model */,
 				969403B22966D58100E908F1 /* View */,
 				969403B32966D58800E908F1 /* Controllers */,
+				966EE23229F6F8E500D22BB0 /* Settings */,
 			);
 			path = "Quotes 1.0";
 			sourceTree = "<group>";
@@ -248,8 +271,12 @@
 			files = (
 				96CB038A29754B78006A00F0 /* AddQuoteViewController.swift in Sources */,
 				96DD372B29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift in Sources */,
+				966EE23A29F6F8E500D22BB0 /* SectionSettings.swift in Sources */,
 				96FF2A0B2966D19E00B21E29 /* AppDelegate.swift in Sources */,
+				966EE23B29F6F8E500D22BB0 /* AppearanceManager.swift in Sources */,
+				966EE23929F6F8E500D22BB0 /* SettingsUserDefaults.swift in Sources */,
 				96CB038D297560D9006A00F0 /* FileManager.swift in Sources */,
+				966EE23C29F6F8E500D22BB0 /* SettingsViewController.swift in Sources */,
 				96CB03852975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift in Sources */,
 				9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */,
 				969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */,
@@ -257,6 +284,7 @@
 				969403B52966D5B100E908F1 /* QuoteModel.swift in Sources */,
 				96FF2A0D2966D19E00B21E29 /* SceneDelegate.swift in Sources */,
 				969403B72966E03100E908F1 /* QuoteCollectionViewController.swift in Sources */,
+				966EE23829F6F8E500D22BB0 /* AppearanceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

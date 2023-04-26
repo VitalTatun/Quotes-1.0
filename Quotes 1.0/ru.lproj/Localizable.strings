@@ -20,3 +20,13 @@
 "author_placeholder" = "Автор";
 "quote_placeholder" = "Текст";
 
+//Settings Screen
+"settings_screen_title" = "Настройки";
+"settings_section_appearance" = "Оформление";
+"settings_section_fonts" = "Шрифты";
+
+"settings_section_appearance_light" = "Светлое";
+"settings_section_appearance_dark" = "Темное";
+"settings_section_appearance_automatic" = "Автоматически";
+
+"settings_section_font" = "Шрифт";

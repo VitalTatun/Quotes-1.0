@@ -19,3 +19,14 @@
 "navigation_bar_new_title" = "Add new quote";
 "author_placeholder" = "Author";
 "quote_placeholder" = "Type quote here..";
+
+//Settings Screen
+"settings_screen_title" = "Settings";
+"settings_section_appearance" = "Appearance";
+"settings_section_fonts" = "Font";
+
+"settings_section_appearance_light" = "Light";
+"settings_section_appearance_dark" = "Dark";
+"settings_section_appearance_automatic" = "Automatic";
+
+"settings_section_font" = "Font";
