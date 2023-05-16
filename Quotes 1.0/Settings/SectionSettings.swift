@@ -32,9 +32,7 @@ enum AppearanceOptions: Int, CaseIterable {
             return String(localized: "settings_section_appearance_dark")
         case .automatic:
             return String(localized: "settings_section_appearance_automatic")
-            
         }
-        
     }
 }
 

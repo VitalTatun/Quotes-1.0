@@ -18,13 +18,13 @@ class AddQuoteViewController: UIViewController {
     weak var quoteViewControllerDelegate: AddQuoteViewControllerDelegate?
     
     private var scrollView = UIScrollView()
-    let contentView = UIView()
+    private let contentView = UIView()
     
-    let quoteText = UITextView()
-    let quoteAuthor = UITextView()
-    let saveButton = UIBarButtonItem()
-    let authorPlaceholder = UILabel()
-    let textPlaceholder = UILabel()
+    private let quoteText = UITextView()
+    private let quoteAuthor = UITextView()
+    private let saveButton = UIBarButtonItem()
+    private let authorPlaceholder = UILabel()
+    private let textPlaceholder = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,7 +173,7 @@ class AddQuoteViewController: UIViewController {
         }
     }
     
-    func validate(textView: UITextView) -> Bool {
+    private func validate(textView: UITextView) -> Bool {
         // this will be reached if the text is nil
         // or if the text only contains white spaces
         // or no text at all

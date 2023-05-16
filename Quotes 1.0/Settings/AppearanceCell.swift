@@ -47,7 +47,7 @@ class AppearanceCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupHStack() {
+    private func setupHStack() {
         HStackView.axis = .horizontal
         HStackView.distribution = .fillEqually
         HStackView.alignment = .center
@@ -67,7 +67,7 @@ class AppearanceCell: UITableViewCell {
         
     }
     
-    func setupVStackDarkMode() {
+    private func setupVStackDarkMode() {
         VStackDarkView.axis = .vertical
         VStackDarkView.distribution = .equalSpacing
         VStackDarkView.alignment = .center
@@ -79,7 +79,7 @@ class AppearanceCell: UITableViewCell {
         VStackDarkView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setupVStackLightMode() {
+    private func setupVStackLightMode() {
         VStackLightView.axis = .vertical
         VStackLightView.distribution = .equalSpacing
         VStackLightView.alignment = .center
@@ -91,7 +91,7 @@ class AppearanceCell: UITableViewCell {
         VStackLightView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setupLightModeImage() {
+    private func setupLightModeImage() {
         lightModeImage.backgroundColor = .red
         lightModeImage.image = UIImage(named: "lightMode")
         lightModeImage.contentMode = .scaleAspectFit
@@ -105,7 +105,7 @@ class AppearanceCell: UITableViewCell {
         lightModeImage.topAnchor.constraint(equalTo: VStackLightView.topAnchor).isActive = true
     }
     
-    func setupDarkModeImage() {
+    private func setupDarkModeImage() {
         darkModeImage.backgroundColor = .red
         darkModeImage.image = UIImage(named: "darkMode")
         darkModeImage.contentMode = .scaleAspectFit
@@ -119,21 +119,19 @@ class AppearanceCell: UITableViewCell {
         darkModeImage.topAnchor.constraint(equalTo: VStackDarkView.topAnchor).isActive = true
     }
     
-    func setupLightLabel() {
+    private func setupLightLabel() {
         lightModeLabel.text = AppearanceOptions.light.description
         lightModeLabel.textColor = .label
-//        lightModeLabel.topAnchor.constraint(equalTo: lightModeImage.bottomAnchor, constant: 10).isActive = true
         lightModeLabel.topAnchor.constraint(greaterThanOrEqualTo: lightModeImage.bottomAnchor, constant: 10).isActive = true
     }
-    func setupDarkLabel() {
+    private func setupDarkLabel() {
         darkModeLabel.text = AppearanceOptions.dark.description
         darkModeLabel.textColor = .label
-//        darkModeLabel.topAnchor.constraint(equalTo: darkModeImage.bottomAnchor, constant: 10).isActive = true
         darkModeLabel.topAnchor.constraint(greaterThanOrEqualTo: darkModeImage.bottomAnchor, constant: 10).isActive = true
 
     }
     
-    func setupLightCheckmark() {
+    private func setupLightCheckmark() {
         let size: CGFloat = 30
         let checkmark = UIImage(systemName: "circle")
         let selectedCheckmark = UIImage(systemName: "circle.inset.filled")
@@ -152,7 +150,7 @@ class AppearanceCell: UITableViewCell {
         
     }
     
-    func setupDarkCheckmark() {
+    private func setupDarkCheckmark() {
         let size: CGFloat = 30
         let checkmark = UIImage(systemName: "circle")
         let selectedCheckmark = UIImage(systemName: "circle.inset.filled")
@@ -180,7 +178,7 @@ class AppearanceCell: UITableViewCell {
         
     }
     
-    fileprivate func updateCheckmark(_ selectedButton: UIButton) {
+    private func updateCheckmark(_ selectedButton: UIButton) {
         let buttons:[UIControl] = [lightModeCheckmark,darkModeCheckmark]
         buttons.forEach { button in
             if button == selectedButton {

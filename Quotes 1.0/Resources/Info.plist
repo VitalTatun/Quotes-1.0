@@ -17,7 +17,6 @@
 	<array>
 		<string>Georgia.ttf</string>
 		<string>Georgia Bold.ttf</string>
-		<string>CormorantGaramond-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

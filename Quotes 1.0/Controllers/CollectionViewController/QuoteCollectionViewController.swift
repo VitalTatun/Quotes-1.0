@@ -110,6 +110,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         } else {
             item = quotes[indexPath.item]
         }
+        cell.layer.cornerRadius = 10
         cell.backgroundColor = UIColor.itemBackgroundColor
         cell.setUpCollectionCell(with: item)
         return cell
@@ -140,7 +141,13 @@ extension QuoteCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height / 1.6)
+        let width = view.frame.width - 20
+        let height = view.frame.height / 1.6
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 }
 
