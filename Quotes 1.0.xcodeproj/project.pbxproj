@@ -24,6 +24,7 @@
 		96CB038A29754B78006A00F0 /* AddQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038929754B78006A00F0 /* AddQuoteViewController.swift */; };
 		96CB038D297560D9006A00F0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CB038C297560D9006A00F0 /* FileManager.swift */; };
 		96DD372B29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD372A29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift */; };
+		96FA92B72A1365810053475D /* QuotesCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FA92B62A1365810053475D /* QuotesCounterView.swift */; };
 		96FF2A0B2966D19E00B21E29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */; };
 		96FF2A0D2966D19E00B21E29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */; };
 		96FF2A142966D19F00B21E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FF2A132966D19F00B21E29 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		96CB038929754B78006A00F0 /* AddQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewController.swift; sourceTree = "<group>"; };
 		96CB038C297560D9006A00F0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		96DD372A29741FE5001D4B13 /* QuoteCollectionViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteCollectionViewController+Actions.swift"; sourceTree = "<group>"; };
+		96FA92B62A1365810053475D /* QuotesCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCounterView.swift; sourceTree = "<group>"; };
 		96FF2A072966D19E00B21E29 /* Quotes 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quotes 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FF2A0A2966D19E00B21E29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FF2A0C2966D19E00B21E29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				969403BA2966E4E300E908F1 /* QuoteCollectionViewCell.swift */,
+				96FA92B62A1365810053475D /* QuotesCounterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				966EE23929F6F8E500D22BB0 /* SettingsUserDefaults.swift in Sources */,
 				96CB038D297560D9006A00F0 /* FileManager.swift in Sources */,
 				966EE23C29F6F8E500D22BB0 /* SettingsViewController.swift in Sources */,
+				96FA92B72A1365810053475D /* QuotesCounterView.swift in Sources */,
 				96CB03852975444D006A00F0 /* QuoteCollectionViewController+ContextMenu.swift in Sources */,
 				9674779C2969B79200FD55DA /* UIColor+Palette.swift in Sources */,
 				969403BB2966E4E300E908F1 /* QuoteCollectionViewCell.swift in Sources */,

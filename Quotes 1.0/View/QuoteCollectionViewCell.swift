@@ -37,7 +37,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
         quoteLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        quoteLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        quoteLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50).isActive = true
         quoteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         quoteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
     }

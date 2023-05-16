@@ -10,6 +10,7 @@ import UIKit
 class QuoteCollectionViewController: UICollectionViewController {
     
     let searchController = UISearchController()
+    lazy var counterView = QuotesCounterView()
     
     var quotes: [Quote] = []
     var filteredQuotes: [Quote] = []
@@ -30,10 +31,19 @@ class QuoteCollectionViewController: UICollectionViewController {
         setupNavBarItems()
         setupNavigationBar()
         setupSearchBar()
+        setupCounterView()
         
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: QuoteCollectionViewCell.self))
         collectionView.backgroundColor = UIColor.collectionBackgroundColor
+    }
+
+    private func setupCounterView() {
+        counterView.isHidden = true
+        counterView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(counterView)
+        counterView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        counterView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
     
     func setupSearchBar() {
@@ -45,7 +55,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         searchController.definesPresentationContext = true
     }
     
-    fileprivate func setupNavigationBar() {
+    private func setupNavigationBar() {
         let largeTextFont = UIFont(name: "Georgia Bold", size: 30)
         let standartTextFont = UIFont(name: "Georgia Bold", size: 20)
         if let appearance = navigationController?.navigationBar.standardAppearance {
@@ -58,7 +68,7 @@ class QuoteCollectionViewController: UICollectionViewController {
         }
     }
     
-    fileprivate func setupNavBarItems() {
+    private func setupNavBarItems() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addQuote(_:)))
         let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(goToSettings))
         let attributes: [NSAttributedString.Key: Any] = [
@@ -96,8 +106,10 @@ class QuoteCollectionViewController: UICollectionViewController {
             collectionView.restore()
         }
         if isFiltering {
+            counterView.configureCounterView(filteredQuotes: filteredQuotes, couterView: counterView)
             return filteredQuotes.count
         } else {
+            counterView.hideCounter(counterView: counterView)
             return quotes.count
         }
     }

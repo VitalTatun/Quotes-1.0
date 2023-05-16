@@ -17,7 +17,6 @@ class Quote: Codable {
     }
 }
 
-#if DEBUG
 extension Quote {
     static var sampleQuote = [
         Quote(text: "Ночь антилоповцы провели в деревушке, окруженные заботами деревенского актива. Они увезли оттуда большой кувшин топленого молока и сладкое воспоминание об одеколонном запахе сена, на котором спали. – Молоко и сено, – сказал Остап, когда Антилопа на рассвете покидала деревню, – что может быть лучше? Всегда думаешь – «Это я еще успею. Еще много будет в моей жизни молока и сена». А на самом деле никогда этого больше не будет. Так и знайте: это была лучшая ночь в вашей жизни, мои бедные друзья. А вы этого даже не заметили.", author: "Золотой телёнок. Ильф и Петров"),
@@ -29,4 +28,3 @@ extension Quote {
         Quote(text: "you can’t connect the dots looking forward; you can only connect them looking backwards, so you have to trust that the dots will somehow connect in your future.", author: "Steve Jobs")
     ]
 }
-#endif
